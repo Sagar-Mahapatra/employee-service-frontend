@@ -12,7 +12,7 @@ export class ProfileComponent implements OnInit {
   btnColor = 'red';
   btnApperence: boolean = true;
   cars: string[] = ['Audi', 'Mercediz'];
-  updated:boolean=true;
+  updated: boolean = false;
 
   constructor() {
     console.log('ProfileComponent constructor executed...');
@@ -43,6 +43,14 @@ export class ProfileComponent implements OnInit {
     } else {
       this.btnApperence = true;
     }
+  }
+  displayUpdate() {
+    if (this.updated == true) {
+      this.updated = false;
+    } else {
+      this.updated = true;
+    }
+
   }
 
 }

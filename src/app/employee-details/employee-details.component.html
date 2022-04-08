@@ -1,30 +1,34 @@
-<table class="table table-striped">
-    <div class="text-center text-info">
+<div class="row" style="text-align: center;">
+    <div class="col s6">
         <h1>Employee Details</h1>
+        <table style="text-align: center;" class="table table-striped">
+            <tr>
+                <th>Name</th>
+                <th>{{employee.empName}}</th>
+            </tr>
+            <tr>
+                <th>Dept</th>
+                <th>{{employee.empDept}}</th>
+            </tr>
+            <tr>
+                <th>Contact</th>
+                <th>{{employee.empContact}}</th>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <th>{{employee.empEmail}}</th>
+            </tr>
+            <tr>
+                <th>Gender</th>
+                <th>{{employee.empGender}}</th>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <th>{{employee.empSalary}}</th>
+            </tr>
+        </table>
     </div>
-
-    <tr>
-        <th>Name</th>
-        <th>{{employee.empName}}</th>
-    </tr>
-    <tr>
-        <th>Dept</th>
-        <th>{{employee.empDept}}</th>
-    </tr>
-    <tr>
-        <th>Contact</th>
-        <th>{{employee.empContact}}</th>
-    </tr>
-    <tr>
-        <th>Email</th>
-        <th>{{employee.empEmail}}</th>
-    </tr>
-    <tr>
-        <th>Gender</th>
-        <th>{{employee.empGender}}</th>
-    </tr>
-    <tr>
-        <th>Salary</th>
-        <th>{{employee.empSalary}}</th>
-    </tr>
-</table>
+    <div style="padding-top: 50px;">
+        <img style="height: 250px;" src="{{employee.imgurl}}" alt="profile-photo">
+    </div>
+</div>
