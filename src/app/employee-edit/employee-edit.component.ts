@@ -9,6 +9,7 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./employee-edit.component.css']
 })
 export class EmployeeEditComponent implements OnInit {
+  message!: string;
 
   //Form Backing Object
   employee: Employee = new Employee(0, '', '', '', '', '', '', '', '', '');
