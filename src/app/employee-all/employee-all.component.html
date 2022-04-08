@@ -1,0 +1,90 @@
+<div class="margin-top">
+    <h3 class="text-center bg-info text-white">ALL EMPLOYEES DATA</h3>
+</div>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let emp of employees" class="col-md-6 col-xl-6">
+            <div class="card m-b-30">
+                <div class="card-body row">
+                    <div class="col-6">
+                        <a href=""><img class="img-fluid" style="height: 200px;width: 200px;" src="{{emp.imgurl}}"
+                                alt="employee_img"></a>
+                    </div>
+                    <div class="col-6 card-title align-self-center mb-0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group item">
+                                <i style="font-size: 30px;" class="text-success float-right">{{emp.empName}}</i>
+                            </li>
+                            <li class="list-group item">
+                                <i class="fa fa-envelope float-right">{{emp.empDept}}</i>
+                            </li>
+                            <li class="list-group item">
+                                <i class="fa fa-envelope text-primary float-right">{{emp.empEmail}}</i>
+                            </li>
+                            <li class="list-group item">
+                                <i class="fa fa-envelope text-info float-right">{{emp.empContact}}</i>
+                            </li>
+                        </ul>
+                        <button class="btn btn-danger" (click)="deleteEmployee(emp.id)">DELETE</button>
+                        &nbsp; <button class="btn btn-info" (click)="editEmployee(emp.id)">EDIT</button>
+                        &nbsp; <button class="btn btn-primary" (click)="viewEmployeeDetail(emp.id)">VIEW</button>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<!-- Modal starts -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">.col-md-4</div>
+                            <div class="col-md-4 ms-auto">.col-md-4 .ms-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 ms-auto">.col-md-3 .ms-auto</div>
+                            <div class="col-md-2 ms-auto">.col-md-2 .ms-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 ms-auto">.col-md-6 .ms-auto</div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-9">
+                                Level 1: .col-sm-9
+                                <div class="row">
+                                    <div class="col-8 col-sm-6">
+                                        Level 2: .col-8 .col-sm-6
+                                    </div>
+                                    <div class="col-4 col-sm-6">
+                                        Level 2: .col-4 .col-sm-6
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- modal end -->
+<div class="bg-success text-white text-center">{{message}}</div>

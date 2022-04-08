@@ -1,0 +1,33 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: azure;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.margin-top {
+    margin-top: 10px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 10px;
+    width: 20%;
+    left: 70%;
+    height: 30px;
+    background-color: azure;
+    text-align: center;
+    color: red;
+    font-size: large;
+    font-weight: 500;
+}

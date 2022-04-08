@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home">Employee App
+    </a></span>
+  <ul>
+    <li class="left"><a mat-icon-button href="#" routerLink="list">Employee List</a></li>
+    <li class="left"><a mat-icon-button href="#" routerLink="add">Add Employee </a></li>
+  </ul>
+  <ul style="margin-left: 500px;">
+    <li *ngIf="!loggedIn" class="right"><a mat-icon-button href="#" routerLink="login">login </a></li>
+    <li *ngIf="loggedIn" class="right"><a mat-icon-button href="#">logout </a></li>
+  </ul>
+</mat-toolbar>
