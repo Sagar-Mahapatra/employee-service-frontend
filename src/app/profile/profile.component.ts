@@ -12,6 +12,7 @@ export class ProfileComponent implements OnInit {
   btnColor = 'red';
   btnApperence: boolean = true;
   cars: string[] = ['Audi', 'Mercediz'];
+  updated:boolean=true;
 
   constructor() {
     console.log('ProfileComponent constructor executed...');
