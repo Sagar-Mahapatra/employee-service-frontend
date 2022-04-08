@@ -1,0 +1,12 @@
+h1 {
+    color: brown;
+    text-transform: capitalize;
+}
+
+h2 {
+    color: forestgreen;
+}
+
+.top {
+    text-align: center;
+}

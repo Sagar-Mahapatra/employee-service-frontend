@@ -1,1 +1,12 @@
-<p>profile works!</p>
+<div class="top">
+    <h1>profile works!</h1>
+    <h2 (mouseover)="change()">I am {{name}}</h2>
+    <a *ngIf="btnApperence;else xyz" [class]="clickBtn">Click</a>
+    <ng-template #xyz>
+        <a class="btn-floating btn-large waves-effect waves-light red">Click</a>
+    </ng-template>
+    <ul *ngFor="let car of cars">
+          <li>{{car}}</li>         
+    </ul>
+    <input type="date" name="" id="">
+</div>
