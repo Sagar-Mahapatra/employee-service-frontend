@@ -8,6 +8,7 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent, pathMatch: 'full', canActivate: [AuthGuard] },
   { path: 'edit/:id', component: EmployeeEditComponent, pathMatch: 'full' },
   { path: 'employee-detail/:id', component: EmployeeDetailsComponent, pathMatch: 'full' },
+  { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
