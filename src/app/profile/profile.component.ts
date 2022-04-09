@@ -9,7 +9,7 @@ export class ProfileComponent implements OnInit, OnChanges {
 
   name!: string;
   clickBtn = 'waves-effect waves-light btn-large';
-  btnColor = 'red';
+  color = 'red';
   btnApperence: boolean = true;
   cars: string[] = ['Audi', 'Mercediz'];
   updated: boolean = false;
@@ -53,6 +53,12 @@ export class ProfileComponent implements OnInit, OnChanges {
       this.updated = false;
     } else {
       this.updated = true;
+    }
+
+    if (this.color == 'red') {
+      this.color = 'blue';
+    } else {
+      this.color = 'red'
     }
 
   }

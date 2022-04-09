@@ -1,12 +1,16 @@
 <div class="top">
-    <h2 (mouseover)="change()">I am {{name}}</h2>
+    <h1 (mouseover)="change()" [style.color]="color" class="margin-top">I am {{name}}</h1>
     <a *ngIf="btnApperence;else xyz" [class]="clickBtn" (click)="displayUpdate()">Click</a>
     <ng-template #xyz>
         <a class="btn-floating btn-large waves-effect waves-light red">Click</a>
     </ng-template>
-    <!-- <ul *ngFor="let car of cars" style="display: flex;">
-          <li>{{car}}</li>         
-    </ul> -->
-    <!-- <input type="date" name="" id=""> -->
-    <h1 *ngIf="updated">UPDATE</h1>
+    <h1 *ngIf="updated" [style.color]="btnApperence?'blue':'red'">UPDATE</h1>
+</div>
+<div class="margin-top" [ngSwitch]="color" [style.text-align]="'center'">
+    <button *ngSwitchCase="'red'" mat-fab color="warn" aria-label="Example icon button with a home icon">
+        <mat-icon>home</mat-icon>
+    </button>
+    <button *ngSwitchCase="'blue'" mat-fab color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon>delete</mat-icon>
+    </button>
 </div>

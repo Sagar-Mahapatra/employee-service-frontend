@@ -12,10 +12,10 @@
                         {{emp.empEmail | lowercase}}<br>
                         {{emp.empContact}}<br>
                     </p>
-                    <button (click)="deleteEmployee(emp.id)" style="margin-top: 10px;"><span class="material-icons"
-                            style="color: red;">delete</span></button>
+                    <button (click)="deleteEmployee(emp.id)" [style.margin-top]="'10px'"><span class="material-icons"
+                            [style.color]="'red'">delete</span></button>
                     &nbsp; <button (click)="editEmployee(emp.id)"><span class="material-icons"
-                            style="color: blueviolet;">edit</span></button>
+                            [style.color]="'blue'">edit</span></button>
                     &nbsp;
                     <button href="#!" class="secondary-content" (click)="viewEmployeeDetail(emp.id)"><i
                             class="material-icons">grade</i></button>

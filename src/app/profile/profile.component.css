@@ -1,6 +1,5 @@
-h1 {
-    color: brown;
-    text-transform: capitalize;
+.top h1 {
+    font-weight: bold;
 }
 
 h2 {
@@ -9,4 +8,8 @@ h2 {
 
 .top {
     text-align: center;
+}
+
+.margin-top {
+    margin-top: 20px;
 }
