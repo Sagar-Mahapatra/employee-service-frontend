@@ -1,7 +1,7 @@
 <div class="container">
     <div class="card">
         <div class="text-center col-md-6 offset-md-3 margin-top">
-            <img class="img-fluid" style="width: 200px;" src="/assets/password_1.png" alt="password-logo">
+            <img class="img-fluid" [style.width]="'200px'" src="/assets/password_1.png" alt="password-logo">
             <h1>Login Here</h1>
         </div>
         <form (ngSubmit)="doLogin()">

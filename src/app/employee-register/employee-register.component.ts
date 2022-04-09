@@ -27,7 +27,7 @@ export class EmployeeRegisterComponent implements OnInit {
         this.snack.open(this.message, "OK");
       }, error => {
         console.log(error);
-        this.message = 'Unable to save! Contact Admin';
+        this.message = 'Unable to save! Please Contact Admin';
         this.snack.open(this.message, "Cancel");
       });
   }

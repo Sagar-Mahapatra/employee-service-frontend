@@ -1,7 +1,7 @@
-<div class="row" style="text-align: center;">
+<div class="row" [style.text-align]="'center'">
     <div class="col s6">
         <h1>Employee Details</h1>
-        <table style="text-align: center;" class="table table-striped">
+        <table [style.text-align]="'center'" class="table table-striped">
             <tr>
                 <th>Name</th>
                 <th>{{employee.empName}}</th>
@@ -28,7 +28,7 @@
             </tr>
         </table>
     </div>
-    <div style="padding-top: 50px;">
-        <img style="height: 250px;" src="{{employee.imgurl}}" alt="profile-photo">
+    <div [style.padding-top]="'50px'">
+        <img [style.height]="'250px'" src="{{employee.imgurl}}" alt="profile-photo">
     </div>
 </div>
