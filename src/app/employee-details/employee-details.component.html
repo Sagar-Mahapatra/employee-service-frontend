@@ -4,7 +4,7 @@
         <table [style.text-align]="'center'" class="table table-striped">
             <tr>
                 <th>Name</th>
-                <th>{{employee.empName}}</th>
+                <th>{{employee.empName | uppercase}}</th>
             </tr>
             <tr>
                 <th>Dept</th>
@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <th>Email</th>
-                <th>{{employee.empEmail}}</th>
+                <th>{{employee.empEmail | lowercase}}</th>
             </tr>
             <tr>
                 <th>Gender</th>
@@ -24,7 +24,7 @@
             </tr>
             <tr>
                 <th>Salary</th>
-                <th>{{employee.empSalary}}</th>
+                <th>{{employee.empSalary | currency:'INR'}}</th>
             </tr>
         </table>
     </div>
