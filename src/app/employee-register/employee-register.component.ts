@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
@@ -13,7 +14,7 @@ export class EmployeeRegisterComponent implements OnInit {
   employee: Employee = new Employee(0, '', '', '', '', '', '', '', '', '');
   message: string = '';
   //DI
-  constructor(private service: EmployeeService) { }
+  constructor(private snack: MatSnackBar, private service: EmployeeService) { }
 
   ngOnInit(): void {
   }
@@ -23,9 +24,11 @@ export class EmployeeRegisterComponent implements OnInit {
       .subscribe(data => {
         this.message = data;
         this.employee = new Employee(0, '', '', '', '', '', '', '', '', '');
+        this.snack.open(this.message, "OK");
       }, error => {
         console.log(error);
         this.message = 'Unable to save! Contact Admin';
+        this.snack.open(this.message, "Cancel");
       });
   }
 }
