@@ -16,7 +16,7 @@ const routes: Routes = [
   { path: 'list', component: EmployeeAllComponent, pathMatch: 'full' },
   { path: 'home', component: HomeComponent, pathMatch: 'full' },
   { path: 'login', component: LoginComponent, pathMatch: 'full' },
-  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full', canActivate: [AuthGuard] },
+  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full' },
   { path: 'edit/:id', component: EmployeeEditComponent, pathMatch: 'full' },
   { path: 'employee-detail/:id', component: EmployeeDetailsComponent, pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
