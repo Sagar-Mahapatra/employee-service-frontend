@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   public loggedIn = false;
   @Input() app_name!: string;
+  @Input() title!: string;
 
   constructor(private loginService: LoginService) { }
 

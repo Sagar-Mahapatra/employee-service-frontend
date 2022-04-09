@@ -2,7 +2,9 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home">{{app_name}}
+  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home">{{app_name}} to
+    </a></span>&nbsp;
+  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home"> {{title}}
     </a></span>
   <ul>
     <li class="left"><a mat-icon-button href="#" routerLink="list">Employee List</a></li>
@@ -10,7 +12,7 @@
     <li class="left"><a mat-icon-button href="#" routerLink="profile">Profile</a></li>
     <li style="margin-left: 20px;"><a mat-icon-button href="#" routerLink="dashboard">Dashboard</a></li>
   </ul>
-  <ul style="margin-left: 400px;">
+  <ul style="margin-left: 200px;">
     <li *ngIf="!loggedIn;else xyz" class="right"><a mat-icon-button href="#" routerLink="login"><i
           class="material-icons">login</i></a></li>
     <ng-template #xyz>
