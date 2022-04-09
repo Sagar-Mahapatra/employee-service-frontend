@@ -8,7 +8,8 @@
             <div class="text-center">
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Username</mat-label>
-                    <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder">
+                    <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder"
+                        (keyup.enter)="usernameValidation()" (blur)="usernameValidation()">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
             </div>
@@ -31,38 +32,3 @@
         </form>
     </div>
 </div>
-
-<!-- Form Using Bootstrap
-<div class="bootstrap-wrapper">
-    <div class="container">
-        <div class="row">
-            <div class="text-center col-md-6 offset-md-3 margin-top">
-                <div class="container">
-                    <img class="img-fluid" style="width: 200px;" src="/assets/password_1.png" alt="password-logo">
-                </div>
-                <h1>Login Here</h1>
-                <form (ngSubmit)="doLogin()">
-                    <div class="form-group">
-                        <input [(ngModel)]="credentials.username" name="username" required type="email"
-                            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                            placeholder="Enter email">
-                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                            else.</small>
-                    </div>
-                    <div class="form-group">
-                        <input [(ngModel)]="credentials.password" name="password" required type="password"
-                            class="form-control" id="exampleInputPassword1" placeholder="Password">
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                    </div>
-                    <button type="submit" mat-raised-button color="accent">Submit</button>
-                    <button type="reset" (click)="btnClick()" mat-raised-button color="primary">Reset</button>
-                </form>
-                <div class="text-center"><a mat-icon-button href="#" routerLink="/add">Not a member ? <b
-                            class="text-primary">Sign Up</b></a></div>
-            </div>
-        </div>
-    </div>
-</div> -->
