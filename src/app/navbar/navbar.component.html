@@ -2,21 +2,21 @@
   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home">{{app_name}} to
+  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" routerLink="home">{{app_name}} to
     </a></span>&nbsp;
-  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" href="#" routerLink="home"> {{title}}
+  <span><a style="font-weight: 500;color: antiquewhite;font-size: large;" routerLink="home"> {{title}}
     </a></span>
   <ul>
-    <li class="left"><a mat-icon-button href="#" routerLink="list">Employee List</a></li>
-    <li class="left"><a mat-icon-button href="#" routerLink="add">Add Employee</a></li>
-    <li class="left"><a mat-icon-button href="#" routerLink="profile">Profile</a></li>
-    <li style="margin-left: 20px;"><a mat-icon-button href="#" routerLink="dashboard">Dashboard</a></li>
+    <li class="left"><a mat-icon-button routerLink="list">Employee List</a></li>
+    <li class="left"><a mat-icon-button routerLink="add">Add Employee</a></li>
+    <li class="left"><a mat-icon-button routerLink="profile">Profile</a></li>
+    <li style="margin-left: 20px;"><a mat-icon-button routerLink="dashboard">Dashboard</a></li>
   </ul>
   <ul style="margin-left: 200px;">
-    <li *ngIf="!loggedIn;else xyz" class="right"><a mat-icon-button href="#" routerLink="login"><i
+    <li *ngIf="!loggedIn;else xyz" class="right"><a mat-icon-button routerLink="login"><i
           class="material-icons">login</i></a></li>
     <ng-template #xyz>
-      <li class="right"><a mat-icon-button href="#">logout</a></li>
+      <li class="right"><a mat-icon-button>logout</a></li>
     </ng-template>
   </ul>
 </mat-toolbar>
