@@ -28,6 +28,7 @@ import { MatInputModule } from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { ProfileComponent } from './profile/profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +42,7 @@ import { ProfileComponent } from './profile/profile.component';
     FooterComponent,
     EmployeeDetailsComponent,
     ProfileComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
