@@ -9,7 +9,7 @@
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Username</mat-label>
                     <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder"
-                        (keyup)="keyUpEvent()">
+                        (keyup.enter)="usernameValidation()" (blur)="usernameValidation()">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                 </mat-form-field>
             </div>

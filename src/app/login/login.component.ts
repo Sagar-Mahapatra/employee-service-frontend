@@ -91,9 +91,9 @@ export class LoginComponent implements OnInit {
     this.snack.open("Reset Done", "Cancel");
   }
 
-  keyUpEvent() {
+  usernameValidation() {
     if (!this.credentials.username.endsWith('@gmail.com')) {
-      this.snack.open("Email must Conatain '@gmail.com'", "OK");
+      this.snack.open("Email must ends with '@gmail.com'", "OK");
     } else { this.snack.dismiss; }
   }
 }
