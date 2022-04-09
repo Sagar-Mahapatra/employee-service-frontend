@@ -90,4 +90,10 @@ export class LoginComponent implements OnInit {
     console.log("btnClick() executed");
     this.snack.open("Reset Done", "Cancel");
   }
+
+  keyUpEvent() {
+    if (!this.credentials.username.endsWith('@gmail.com')) {
+      this.snack.open("Email must Conatain '@gmail.com'", "OK");
+    } else { this.snack.dismiss; }
+  }
 }
