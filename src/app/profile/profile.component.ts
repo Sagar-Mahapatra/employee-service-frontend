@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent implements OnInit {
+export class ProfileComponent implements OnInit, OnChanges {
 
   name!: string;
   clickBtn = 'waves-effect waves-light btn-large';
@@ -15,7 +15,11 @@ export class ProfileComponent implements OnInit {
   updated: boolean = false;
 
   constructor() {
-    console.log('ProfileComponent constructor executed...');
+    console.log('ProfileComponent constructor() executed...');
+  }
+
+  ngOnInit(): void {
+    console.log('ProfileComponent ngOnInit() executed...');
     setTimeout(() => {
       if (this.name == 'sagar') {
         this.name = 'a developer';
@@ -26,8 +30,8 @@ export class ProfileComponent implements OnInit {
     const s = ['a developer', 'sagar'];
     this.name = s[Math.floor(Math.random() * 2)];
   }
-
-  ngOnInit(): void {
+  ngOnChanges(value: SimpleChanges) {
+    console.log('ProfileComponent ngOnChanges() executed...' + value);
   }
 
   change() {

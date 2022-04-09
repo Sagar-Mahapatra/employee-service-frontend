@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 
 @Component({
@@ -8,15 +8,16 @@ import { LoginService } from '../login.service';
 })
 export class NavbarComponent implements OnInit {
 
-  public loggedIn=false;
+  public loggedIn = false;
+  @Input() app_name!: string;
 
-  constructor(private loginService:LoginService) { }
+  constructor(private loginService: LoginService) { }
 
   ngOnInit(): void {
-    this.loggedIn=this.loginService.isLogin;
+    this.loggedIn = this.loginService.isLogin;
   }
 
-  logoutUser(){
+  logoutUser() {
     this.loginService.logout();
     location.reload();
   }
