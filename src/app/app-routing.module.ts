@@ -8,6 +8,7 @@ import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { EmployeeRegisterComponent } from './employee-register/employee-register.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'edit/:id', component: EmployeeEditComponent, pathMatch: 'full' },
   { path: 'employee-detail/:id', component: EmployeeDetailsComponent, pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' }
 ];
 
