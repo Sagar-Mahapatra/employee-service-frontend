@@ -4,40 +4,42 @@
   </div>
   <div class="card-content">
     <form action="#" (ngSubmit)="createEmployee()">
-      <div class="form-group">
+      <div>
         <label>Name</label>
-        <input type="text" name="empName" id="empName" [(ngModel)]="employee.empName" class="form-control" />
+        <input type="text" name="empName" id="empName" [(ngModel)]="employee.empName" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Password</label>
         <input type="text" name="empPassword" id="empPassword" [(ngModel)]="employee.empPassword"
           class="form-control" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Salary</label>
-        <input type="text" name="empSalary" id="empSal" [(ngModel)]="employee.empSalary" class="form-control" />
+        <input type="text" name="empSalary" id="empSal" [(ngModel)]="employee.empSalary" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Gender</label>
         <input type="text" name="empGender" id="empGender" [(ngModel)]="employee.empGender" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Email</label>
-        <input type="text" name="empEmail" id="empEmail" [(ngModel)]="employee.empEmail" class="form-control" />
+        <input type="text" name="empEmail" id="empEmail" [(ngModel)]="employee.empEmail" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Contact</label>
-        <input type="text" name="empContact" id="empContact" [(ngModel)]="employee.empContact" class="form-control" />
+        <input type="text" name="empContact" id="empContact" [(ngModel)]="employee.empContact" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Image</label>
-        <input type="text" name="imgurl" id="imgurl" [(ngModel)]="employee.imgurl" class="form-control" />
+        <input type="text" name="imgurl" id="imgurl" [(ngModel)]="employee.imgurl" />
       </div>
-      <div class="form-group">
+      <div>
         <label>Department</label>
         <input type="text" name="empDept" id="empDept" [(ngModel)]="employee.empDept" />
       </div>
-      <button type="submit" class="btn btn-success">REGISTER</button>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
     </form>
   </div>
 </div>

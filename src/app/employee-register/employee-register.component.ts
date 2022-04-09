@@ -12,7 +12,7 @@ export class EmployeeRegisterComponent implements OnInit {
 
   //Form Backing Object
   employee: Employee = new Employee(0, '', '', '', '', '', '', '', '', '');
-  message: string = '';
+  message!: string;
   //DI
   constructor(private snack: MatSnackBar, private service: EmployeeService) { }
 
