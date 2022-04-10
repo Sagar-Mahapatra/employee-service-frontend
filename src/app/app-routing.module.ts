@@ -21,8 +21,12 @@ const routes: Routes = [
   { path: 'edit/:id', component: EmployeeEditComponent, pathMatch: 'full' },
   { path: 'employee-detail/:id', component: EmployeeDetailsComponent, pathMatch: 'full' },
   { path: 'profile', component: ProfileComponent, pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  {
+    path: 'admin', loadChildren: () => import('./admin/admin.module')
+      .then(mod => mod.AdminModule)
+  },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -4,19 +4,22 @@
             <img class="img-fluid" [style.width]="'200px'" src="/assets/password_1.png" alt="password-logo">
             <h1>Login Here</h1>
         </div>
-        <form (ngSubmit)="doLogin()">
+        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
             <div class="text-center">
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Username</mat-label>
                     <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder"
-                        (keyup.enter)="usernameValidation()" (blur)="usernameValidation()">
+                        (keyup.enter)="usernameValidation()" formControlName="email" (blur)="usernameValidation()"
+                        required="true">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    <mat-hint *ngIf="email" [style.color]="'red'">Email is Required</mat-hint>
                 </mat-form-field>
             </div>
             <div class="text-center">
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Password</mat-label>
-                    <input [(ngModel)]="credentials.password" name="password" matInput placeholder="Placeholder">
+                    <input [(ngModel)]="credentials.password" formControlName="password" name="password" matInput
+                        placeholder="Placeholder" required="true">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>Hint</mat-hint>
                 </mat-form-field>

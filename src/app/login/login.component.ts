@@ -3,7 +3,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { LoginService } from '../login.service';
 import { TokenStorageService } from '../token-storage.service';
-
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -18,6 +18,11 @@ export class LoginComponent implements OnInit {
   }
 
   flag: boolean = false;
+
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('')
+  });
 
 
   myImage: string = "assets/Image/image.jpg";
@@ -95,5 +100,9 @@ export class LoginComponent implements OnInit {
     if (!this.credentials.username.endsWith('@gmail.com')) {
       this.snack.open("Email must ends with '@gmail.com'", "OK");
     } else { this.snack.dismiss; }
+  }
+
+  get email() {
+    return this.loginForm.get('email');
   }
 }

@@ -12,6 +12,7 @@
     <li class="left"><a mat-icon-button routerLink="profile">Profile</a></li>
     <li [style.margin-left]="'20px'"><a mat-icon-button routerLink="dashboard">Dashboard</a>
     <li [style.margin-left]="'40px'"><a mat-icon-button routerLink="contact-us">Contact Us</a></li>
+    <li [style.margin-left]="'40px'"><a mat-icon-button routerLink="admin/list">Admin</a></li>
   </ul>
   <ul style="margin-left: 100px;">
     <li *ngIf="!loggedIn;else xyz" class="right"><a mat-icon-button routerLink="login"><i
