@@ -18,13 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   flag: boolean = false;
-  disabled: boolean = true;
-
-  loginForm = new FormGroup({
-    email: new FormControl('', Validators.required),
-    password: new FormControl('')
-  });
-
+  loginForm: FormGroup;
 
   myImage: string = "assets/Image/image.jpg";
   form: any = {};
@@ -33,7 +27,12 @@ export class LoginComponent implements OnInit {
   errorMessage = '';
   roles: string[] = [];
 
-  constructor(private snack: MatSnackBar, private ls: LoginService, private router: Router, private tokenStorage: TokenStorageService) { }
+  constructor(private snack: MatSnackBar, private ls: LoginService, private router: Router, private tokenStorage: TokenStorageService) {
+    this.loginForm = new FormGroup({
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)])
+    });
+  }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -43,51 +42,28 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  onSubmit(): void {
-    this.ls.generateToken(this.credentials).subscribe(
+  doLogin(): void {
+    this.flag = true;
+    this.ls.login(this.credentials).subscribe(
       data => {
-        if (data != null || data != "") {
-          this.gotoIndex();
-        }
+        this.flag = false;
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUser(data);
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        //this.roles = this.tokenStorage.getUser().roles;
+        //alert('Logged In as ' + this.roles);
+        this.snack.open("Login Successful", "OK");
+        this.gotoIndex();
       },
       err => {
+        this.flag = false;
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
-        alert('Login Failed + ' + this.errorMessage);
+        //alert('Login Failed + ' + this.errorMessage);
+        this.snack.open("Invalid Credentials", "Cancel");
       }
     );
-  }
-
-  doLogin(): void {
-    if (this.credentials.username == '' || this.credentials.password == '') {
-      console.log("Fields can not be empty");
-      this.snack.open("Fields can not be empty", "Cancel");
-    } else {
-      this.flag = true;
-      this.disabled = false;
-      this.ls.login(this.credentials).subscribe(
-        data => {
-          this.flag = false;
-          this.tokenStorage.saveToken(data.accessToken);
-          this.tokenStorage.saveUser(data);
-          this.isLoginFailed = false;
-          this.isLoggedIn = true;
-          //this.roles = this.tokenStorage.getUser().roles;
-          //alert('Logged In as ' + this.roles);
-          this.snack.open("Login Successful", "OK");
-          this.gotoIndex();
-        },
-        err => {
-          this.flag = false;
-          this.errorMessage = err.error.message;
-          this.isLoginFailed = true;
-          //alert('Login Failed + ' + this.errorMessage);
-          this.snack.open("Invalid Credentials", "Cancel");
-        }
-
-      );
-    }
-
   }
   gotoIndex() {
     this.router.navigate(['home']);
@@ -98,20 +74,4 @@ export class LoginComponent implements OnInit {
     this.snack.open("Reset Done", "Cancel");
   }
 
-  usernameValidation() {
-    if (!this.credentials.username.endsWith('@gmail.com') || this.credentials.username == '') {
-      this.disabled = true;
-      this.snack.open("Email must ends with '@gmail.com'", "OK");
-    } else { this.disabled = false; }
-  }
-
-  passwordValidation() {
-    if (this.credentials.password == '' || this.credentials.username == '' || !this.credentials.username.endsWith('@gmail.com')) {
-      this.disabled = true;
-    } else { this.disabled = false; }
-  }
-
-  get email() {
-    return this.loginForm.get('email');
-  }
 }

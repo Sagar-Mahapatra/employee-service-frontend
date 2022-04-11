@@ -4,30 +4,28 @@
             <img class="img-fluid" [style.width]="'200px'" src="/assets/password_1.png" alt="password-logo">
             <h1>Login Here</h1>
         </div>
-        <form [formGroup]="loginForm" (ngSubmit)="doLogin()">
+        <form [formGroup]="loginForm" (ngSubmit)="this.loginForm.valid && doLogin()">
             <div class="text-center">
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Username</mat-label>
                     <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder"
-                        (keyup)="usernameValidation()" formControlName="email" (blur)="usernameValidation()"
-                        required="true">
+                        formControlName="email" required="true">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    <mat-hint *ngIf="email" [style.color]="'red'">Email is Required</mat-hint>
+                    <mat-error>Email is Required</mat-error>
                 </mat-form-field>
             </div>
             <div class="text-center">
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Password</mat-label>
                     <input [(ngModel)]="credentials.password" formControlName="password" name="password" matInput
-                        placeholder="Placeholder" required="true" (keyup)="passwordValidation()">
+                        placeholder="Placeholder" required="true">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-                    <mat-hint>Hint</mat-hint>
+                    <mat-error>Min 8 digit Password is Required</mat-error>
                 </mat-form-field>
             </div>
-
             <div class="text-center">
                 <mat-spinner *ngIf="flag" style="margin: auto;"></mat-spinner>
-                <button [disabled]="disabled" type="submit" mat-raised-button color="accent">Submit</button>
+                <button type="submit" mat-raised-button color="accent">Submit</button>
                 <button type="reset" (click)="btnClick()" mat-raised-button color="primary">Reset</button>
             </div>
             <div class="text-center"><a href="#" routerLink="/add">Not a member ? <b>Sign Up</b></a></div>
