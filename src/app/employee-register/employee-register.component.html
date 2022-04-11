@@ -6,7 +6,7 @@
     <form (ngSubmit)="createEmployee()">
       <div>
         <label>Name</label>
-        <input type="text" name="empName" id="empName" [(ngModel)]="employee.empName" />
+        <input type="text" name="empName" id="empName" [(ngModel)]="employee.empName" required/>
       </div>
       <div>
         <label>Password</label>
