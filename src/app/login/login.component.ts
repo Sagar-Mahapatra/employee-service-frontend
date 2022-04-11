@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   }
 
   flag: boolean = false;
+  disabled: boolean = true;
 
   loginForm = new FormGroup({
     email: new FormControl('', Validators.required),
@@ -63,6 +64,7 @@ export class LoginComponent implements OnInit {
       this.snack.open("Fields can not be empty", "Cancel");
     } else {
       this.flag = true;
+      this.disabled = false;
       this.ls.login(this.credentials).subscribe(
         data => {
           this.flag = false;
@@ -97,9 +99,16 @@ export class LoginComponent implements OnInit {
   }
 
   usernameValidation() {
-    if (!this.credentials.username.endsWith('@gmail.com')) {
+    if (!this.credentials.username.endsWith('@gmail.com') || this.credentials.username == '') {
+      this.disabled = true;
       this.snack.open("Email must ends with '@gmail.com'", "OK");
-    } else { this.snack.dismiss; }
+    } else { this.disabled = false; }
+  }
+
+  passwordValidation() {
+    if (this.credentials.password == '' || this.credentials.username == '' || !this.credentials.username.endsWith('@gmail.com')) {
+      this.disabled = true;
+    } else { this.disabled = false; }
   }
 
   get email() {

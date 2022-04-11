@@ -9,7 +9,7 @@
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Username</mat-label>
                     <input [(ngModel)]="credentials.username" name="username" matInput placeholder="Placeholder"
-                        (keyup.enter)="usernameValidation()" formControlName="email" (blur)="usernameValidation()"
+                        (keyup)="usernameValidation()" formControlName="email" (blur)="usernameValidation()"
                         required="true">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint *ngIf="email" [style.color]="'red'">Email is Required</mat-hint>
@@ -19,7 +19,7 @@
                 <mat-form-field appearance="outline" style="width: 80%;">
                     <mat-label>Password</mat-label>
                     <input [(ngModel)]="credentials.password" formControlName="password" name="password" matInput
-                        placeholder="Placeholder" required="true">
+                        placeholder="Placeholder" required="true" (keyup)="passwordValidation()">
                     <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
                     <mat-hint>Hint</mat-hint>
                 </mat-form-field>
@@ -27,7 +27,7 @@
 
             <div class="text-center">
                 <mat-spinner *ngIf="flag" style="margin: auto;"></mat-spinner>
-                <button [disabled]="flag" type="submit" mat-raised-button color="accent">Submit</button>
+                <button [disabled]="disabled" type="submit" mat-raised-button color="accent">Submit</button>
                 <button type="reset" (click)="btnClick()" mat-raised-button color="primary">Reset</button>
             </div>
             <div class="text-center"><a href="#" routerLink="/add">Not a member ? <b>Sign Up</b></a></div>
