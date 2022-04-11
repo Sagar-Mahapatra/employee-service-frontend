@@ -6,8 +6,9 @@
     <form (ngSubmit)="createEmployee()">
       <div>
         <label>Name</label>
-        <input type="text" name="empName" id="empName" [(ngModel)]="employee.empName" required/>
+        <input type="text" name="empName" id="empName" (keyup)="updateEmpName($event)" required />
       </div>
+      <!-- {{employee.empName}} -->
       <div>
         <label>Password</label>
         <input type="password" name="empPassword" id="empPassword" [(ngModel)]="employee.empPassword" />

@@ -31,4 +31,8 @@ export class EmployeeRegisterComponent implements OnInit {
         this.snack.open(this.message, "Cancel");
       });
   }
+
+  updateEmpName(data: any) {
+    this.employee.empName = data.target.value;
+  }
 }
