@@ -43,4 +43,10 @@ export class EmployeeService {
       responseType: 'text',
     });
   }
+
+  updateEmployeeName(id:number,name:string) {
+    return this.http.patch(`${this.uri}/api/v1/employee/${id}/${name}`, {
+      responseType: 'text',
+    });
+  }
 }

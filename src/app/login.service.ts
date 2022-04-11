@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NavbarComponent } from './navbar/navbar.component';
+
 
 const AUTH_API = 'http://localhost:8955/auth/';
 

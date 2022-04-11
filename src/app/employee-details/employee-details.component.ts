@@ -10,7 +10,8 @@ import { EmployeeService } from '../employee.service';
 })
 export class EmployeeDetailsComponent implements OnInit {
   employee: Employee = new Employee(0, '', '', '', '', '', '', '', '', '');
-
+  updatedName!: string;
+  clicked: boolean = false;
   constructor(private service: EmployeeService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
@@ -26,4 +27,18 @@ export class EmployeeDetailsComponent implements OnInit {
     })
   }
 
+  updateEmployee(id: number, name: string) {
+    if (name != undefined) {
+      this.service.updateEmployeeName(id, name).subscribe(data => {
+        this.router.navigate(['employee-detail', id]);
+      }, error => {
+        console.log("error from fetchOneEmployee(id) of service" + error);
+        this.router.navigate(['list'], error);
+      }
+      )
+    }
+  }
+  editName() {
+    this.clicked = true;
+  }
 }

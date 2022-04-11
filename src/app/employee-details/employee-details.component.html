@@ -5,6 +5,17 @@
             <tr>
                 <th>Name</th>
                 <th>{{employee.empName | uppercase}}</th>
+                <th><button [style.background-color]="'green'" [style.color]="'white'" (click)="editName()"
+                        color="primary" aria-label="Example icon button with a bookmark icon">
+                        <mat-icon>edit</mat-icon>
+                    </button></th>
+                <th>
+                    <form action="" (ngSubmit)="updateEmployee(employee.id,updatedName)">
+                        <input *ngIf="clicked" type="text" name="updatedName" id="updatedName"
+                            [(ngModel)]="updatedName" />
+                        <button *ngIf="clicked" type="submit" class="btn btn-success">UPDATE</button>
+                    </form>
+                </th>
             </tr>
             <tr>
                 <th>Dept</th>
